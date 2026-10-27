@@ -19,11 +19,12 @@ BASE_DIR = Path.home() / "sagemaker-inference"
 EXTRACTOR = BASE_DIR / "cart_data_pipeline.py"
 SUBMITTER = Path.home() / "training-code" / "submit_cart_training.py"
 
-# One multi-model endpoint serves every cart (endpoint-build/deploy_multimodel_endpoint.py).
+# One endpoint serves every cart (endpoint-build/deploy_cart_forecast_endpoint.py);
+# it loads each cart's live model from s3://<bucket>/models/live/cart_<id>.tar.gz.
 PREDICT_ENDPOINT = os.environ.get("PREDICT_ENDPOINT", "yk-cart-forecast")
 
 sys.path.append(str(SUBMITTER.parent))
-from promote_model import current_target_model, promote  # noqa: E402
+from promote_model import promote  # noqa: E402
 
 # Use the system Python for extraction (pymongo/dotenv are installed there),
 # and the SageMaker virtualenv Python for training submission.
@@ -290,9 +291,10 @@ def list_cart_jobs(cart_id: int):
 
 @app.post("/carts/{cart_id}/promote")
 def promote_model(cart_id: int, training_job_name: str | None = None):
-    """Endpoint 3: make a completed training job's model the one /predict uses.
+    """Endpoint 3 (optional): publish a past training job's model as the live one.
 
-    Defaults to the cart's latest completed training job.
+    Training already does this when it finishes; use this to roll back to an
+    older job, or for jobs from before that. Defaults to the latest completed job.
     """
     if cart_id <= 0:
         raise HTTPException(status_code=400, detail="cart_id must be positive")
@@ -308,7 +310,7 @@ class PredictRequest(BaseModel):
 
 @app.post("/carts/{cart_id}/predict")
 def predict(cart_id: int, request: PredictRequest):
-    """Endpoint 4: forecast one day for a cart via the multi-model endpoint.
+    """Endpoint 4: forecast one day for a cart via the yk-cart-forecast endpoint.
 
     The endpoint also saves the CSV to s3://<bucket>/prediction/daily/<MM-YYYY>/<cart>/.
     """
@@ -319,18 +321,10 @@ def predict(cart_id: int, request: PredictRequest):
     except ValueError:
         raise HTTPException(status_code=400, detail="date must be DD-MM-YYYY")
 
-    target_model = current_target_model(cart_id)
-    if target_model is None:
-        raise HTTPException(
-            status_code=409,
-            detail=f"Cart {cart_id} has no promoted model; run POST /carts/{cart_id}/promote first",
-        )
-
     runtime = boto3.client("sagemaker-runtime", region_name=REGION)
     try:
         resp = runtime.invoke_endpoint(
             EndpointName=PREDICT_ENDPOINT,
-            TargetModel=target_model,
             ContentType="application/json",
             Accept="application/json",
             Body=json.dumps({"cart_id": str(cart_id), "date": request.date}),
@@ -338,6 +332,4 @@ def predict(cart_id: int, request: PredictRequest):
     except runtime.exceptions.ModelError as exc:
         raise HTTPException(status_code=502, detail=f"Model error: {exc}")
 
-    result = json.loads(resp["Body"].read())
-    result["target_model"] = target_model
-    return result
+    return json.loads(resp["Body"].read())

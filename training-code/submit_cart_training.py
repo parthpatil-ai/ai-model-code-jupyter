@@ -42,7 +42,11 @@ def main():
         framework_version="1.4-2",
         py_version="py3",
         output_path=f"s3://{BUCKET}/models/cart_{cart_id}/",
-        hyperparameters={"FORECAST_TUNE": "0"},
+        hyperparameters={
+            "FORECAST_TUNE": "0",
+            # Overwrites the cart's live model when training finishes.
+            "live-model-uri": f"s3://{BUCKET}/models/live/cart_{cart_id}.tar.gz",
+        },
         sagemaker_session=session,
         base_job_name=f"cart-{cart_id}-train",
     )
