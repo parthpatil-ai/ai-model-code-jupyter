@@ -47,9 +47,12 @@ def main():
         base_job_name=f"cart-{cart_id}-train",
     )
 
+    # cart_data_pipeline.py uploads to raw/cart_<id>/. The older
+    # raw/cart_<id>/cart_<id>/ folders came from a since-fixed doubled prefix
+    # and hold stale data, so they must not be the training channel.
     estimator.fit(
         {
-            "training": f"s3://{BUCKET}/raw/cart_{cart_id}/cart_{cart_id}/"
+            "training": f"s3://{BUCKET}/raw/cart_{cart_id}/"
         },
         job_name=job_name,
         wait=False,
