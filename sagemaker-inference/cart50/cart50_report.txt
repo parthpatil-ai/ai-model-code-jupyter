@@ -1,0 +1,61 @@
+======================================================================
+CART DATASET REPORT
+======================================================================
+Date range      : 01-03-2026 to 12-10-2026 (226 days)
+Rows / products : 111,475 rows, 857 products
+Units           : 145,021 total, 19,940 bulk (98 bulk rows)
+Unit conversion : 20 packet rows -> pieces (28 -> 1400 units)
+Variants renamed: 3 (current name used, same id kept)
+
+DAYS WITH 0 SALES OR UNDER 30% OF A NORMAL DAY (normal = 514 units)
+  01-03-2026 (Sun): 2 units - first day of the data (cart started recording)
+  08-05-2026 (Fri): 108 units - no cause found in the data
+  12-10-2026 (Mon): 43 units - no cause found in the data
+
+LATE-POSTING FIXES (walk-in units spread evenly; bulk stays on the upload day)
+  01-05-2026 -> 28-04-2026 to 01-05-2026: 3,260 units
+  16-05-2026 -> 12-05-2026 to 16-05-2026: 2,060 units
+  04-06-2026 -> 02-06-2026 to 04-06-2026: 2,467 units
+  08-06-2026, 09-06-2026 -> 06-06-2026 to 09-06-2026: 4,292 units
+  14-06-2026 -> 13-06-2026 to 14-06-2026: 2,048 units
+
+STOCK-OUTS
+  Method: a run of >= 3 zero days is marked when, given how often the product
+  normally sells, a gap that long has < 1% chance of happening by luck.
+  Days before first sale / after last sale count as 'not on the cart'.
+  Marked: 80,383 product-days across 705 products
+
+20 LARGEST BULK ROWS
+   1,125  31-08-2026  Paper Cups Plain 150 ML 0.71 Paisa  [supply/catering order]
+   1,070  27-09-2026  Top Taste Zingy Sauce Mrp1/-  [supply/catering order]
+     903  31-08-2026  Top Taste Zingy Sauce Mrp1/-  [supply/catering order]
+     689  14-06-2026  Top Taste Zingy Sauce Mrp1/-  [supply/catering order]
+     626  31-08-2026  SB Paper Cups Plain 100 ML 0.59 Paisa  [supply/catering order]
+     621  28-07-2026  Paper Cups Plain 150 ML 0.71 Paisa  [supply/catering order]
+     535  21-04-2026  Baked Samosa MRP 20  [>= 8x usual day (30)]
+     519  27-09-2026  Paper Cups Plain 150 ML 0.71 Paisa  [supply/catering order]
+     500  10-09-2026  Top Taste Zingy Sauce Mrp1/-  [supply/catering order]
+     499  28-03-2026  TB Wooden Stirrers (Pack of 500)  [supply/catering order]
+     488  16-05-2026  TB Wooden Stirrers (Pack of 500)  [supply/catering order]
+     483  28-07-2026  Top Taste Zingy Sauce Mrp1/-  [supply/catering order]
+     460  20-08-2026  Parle Kismi Assorted Packet Mrp1  [>= 8x usual day (25)]
+     447  01-05-2026  Paper Cups Plain 150 ML 0.71 Paisa  [supply/catering order]
+     442  27-09-2026  Parle Kismi Assorted Packet Mrp1  [>= 8x usual day (25)]
+     403  08-06-2026  Paneer Pattis Mrp30  [>= 8x usual day (12)]
+     400  01-05-2026  SB Paper Cups Plain 100 ML 0.59 Paisa  [supply/catering order]
+     376  20-08-2026  Baked Samosa MRP 20  [>= 8x usual day (30)]
+     355  14-06-2026  Diposal 300 ml Glass (40 pcs) MRP 5  [supply/catering order]
+     328  08-06-2026  Paper Cups Plain 150 ML 0.71 Paisa  [supply/catering order]
+
+CATALOG / MAPPING / HOLIDAYS
+  catalog: 857 products, 509 active, 459 launch dates, 348 delisted
+  replaced: 3989 Crax Fritts Cream & Onion MRP 10  ->  3732 Crax Fritts cream & Onion MRP 20 from 09-09-2026
+  replaced: 3568 Sprite 600 Ml  ->  4528 Sprite 740 ML MRP 35 from 01-10-2026
+  replaced: 4511 Unibic Choco Chip Cookies 10 MRP  ->  4509 Unibic Choco Chip Cookies 30 MRP from 09-10-2026
+  event days added to holidays: 28-03-2026, 27-06-2026, 28-07-2026, 31-08-2026, 27-09-2026
+
+CHECK / UNSURE
+  - 76 MRPs filled from typical retail prices (no price in the name)
+  - 0 products could not be categorised ('Other')
+  - transactions column omitted: the export has no bill counts
+  - moon-based holiday dates can shift by a day; add local festivals for the cart's city

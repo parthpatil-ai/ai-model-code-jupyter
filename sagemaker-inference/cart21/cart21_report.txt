@@ -1,0 +1,167 @@
+======================================================================
+CART DATASET REPORT
+======================================================================
+Date range      : 11-06-2024 to 17-01-2026 (586 days)
+Rows / products : 357,503 rows, 1057 products
+Units           : 129,521 total, 4,874 bulk (49 bulk rows)
+Variants renamed: 186 (current name used, same id kept)
+
+DAYS WITH 0 SALES OR UNDER 30% OF A NORMAL DAY (normal = 208 units)
+  11-06-2024 (Tue): 25 units - first day of the data (cart started recording)
+  19-08-2024 (Mon): 1 units - no cause found in the data
+  30-10-2024 (Wed): 27 units - no cause found in the data
+  09-02-2025 (Sun): 0 units - no cause found in the data
+  20-02-2025 (Thu): 0 units - no cause found in the data
+  14-03-2025 (Fri): 0 units - no cause found in the data
+  19-03-2025 (Wed): 0 units - no cause found in the data
+  23-03-2025 (Sun): 60 units - no cause found in the data
+  24-03-2025 (Mon): 61 units - no cause found in the data
+  06-04-2025 (Sun): 0 units - no cause found in the data
+  09-04-2025 (Wed): 37 units - no cause found in the data
+  10-04-2025 (Thu): 34 units - no cause found in the data
+  11-04-2025 (Fri): 46 units - no cause found in the data
+  12-04-2025 (Sat): 46 units - no cause found in the data
+  13-04-2025 (Sun): 32 units - no cause found in the data
+  14-04-2025 (Mon): 28 units - no cause found in the data
+  15-04-2025 (Tue): 19 units - no cause found in the data
+  16-04-2025 (Wed): 14 units - no cause found in the data
+  17-04-2025 (Thu): 1 units - no cause found in the data
+  18-04-2025 (Fri): 0 units - no cause found in the data
+  19-04-2025 (Sat): 0 units - no cause found in the data
+  20-04-2025 (Sun): 0 units - no cause found in the data
+  21-04-2025 (Mon): 19 units - no cause found in the data
+  23-04-2025 (Wed): 36 units - no cause found in the data
+  24-04-2025 (Thu): 19 units - no cause found in the data
+  25-04-2025 (Fri): 5 units - no cause found in the data
+  26-04-2025 (Sat): 0 units - no cause found in the data
+  27-04-2025 (Sun): 0 units - no cause found in the data
+  28-04-2025 (Mon): 0 units - no cause found in the data
+  29-04-2025 (Tue): 0 units - no cause found in the data
+  30-04-2025 (Wed): 0 units - no cause found in the data
+  01-05-2025 (Thu): 0 units - no cause found in the data
+  02-05-2025 (Fri): 0 units - no cause found in the data
+  03-05-2025 (Sat): 0 units - no cause found in the data
+  04-05-2025 (Sun): 0 units - no cause found in the data
+  05-05-2025 (Mon): 0 units - no cause found in the data
+  06-05-2025 (Tue): 0 units - no cause found in the data
+  07-05-2025 (Wed): 0 units - no cause found in the data
+  08-05-2025 (Thu): 0 units - no cause found in the data
+  09-05-2025 (Fri): 0 units - no cause found in the data
+  10-05-2025 (Sat): 0 units - no cause found in the data
+  11-05-2025 (Sun): 0 units - no cause found in the data
+  12-05-2025 (Mon): 0 units - no cause found in the data
+  13-05-2025 (Tue): 0 units - no cause found in the data
+  14-05-2025 (Wed): 0 units - no cause found in the data
+  15-05-2025 (Thu): 0 units - no cause found in the data
+  16-05-2025 (Fri): 0 units - no cause found in the data
+  17-05-2025 (Sat): 0 units - no cause found in the data
+  18-05-2025 (Sun): 0 units - no cause found in the data
+  19-05-2025 (Mon): 0 units - no cause found in the data
+  20-05-2025 (Tue): 0 units - no cause found in the data
+  21-05-2025 (Wed): 0 units - no cause found in the data
+  22-05-2025 (Thu): 0 units - no cause found in the data
+  23-05-2025 (Fri): 17 units - no cause found in the data
+  24-05-2025 (Sat): 0 units - no cause found in the data
+  25-05-2025 (Sun): 0 units - no cause found in the data
+  26-05-2025 (Mon): 0 units - no cause found in the data
+  31-05-2025 (Sat): 54 units - no cause found in the data
+  01-06-2025 (Sun): 0 units - no cause found in the data
+  07-06-2025 (Sat): 34 units - no cause found in the data
+  11-06-2025 (Wed): 16 units - no cause found in the data
+  24-06-2025 (Tue): 32 units - no cause found in the data
+  25-06-2025 (Wed): 31 units - no cause found in the data
+  26-06-2025 (Thu): 0 units - no cause found in the data
+  27-06-2025 (Fri): 0 units - no cause found in the data
+  28-06-2025 (Sat): 0 units - no cause found in the data
+  29-06-2025 (Sun): 5 units - no cause found in the data
+  30-06-2025 (Mon): 25 units - no cause found in the data
+  01-07-2025 (Tue): 1 units - no cause found in the data
+  13-07-2025 (Sun): 2 units - no cause found in the data
+  14-07-2025 (Mon): 3 units - no cause found in the data
+  15-07-2025 (Tue): 0 units - no cause found in the data
+  16-07-2025 (Wed): 0 units - no cause found in the data
+  27-07-2025 (Sun): 0 units - no cause found in the data
+  03-08-2025 (Sun): 17 units - no cause found in the data
+  04-08-2025 (Mon): 0 units - no cause found in the data
+  05-08-2025 (Tue): 0 units - no cause found in the data
+  06-08-2025 (Wed): 0 units - no cause found in the data
+  07-08-2025 (Thu): 0 units - no cause found in the data
+  09-08-2025 (Sat): 0 units - no cause found in the data
+  24-08-2025 (Sun): 0 units - no cause found in the data
+  25-08-2025 (Mon): 0 units - no cause found in the data
+  26-08-2025 (Tue): 0 units - no cause found in the data
+  27-08-2025 (Wed): 0 units - no cause found in the data
+  28-08-2025 (Thu): 0 units - no cause found in the data
+  29-08-2025 (Fri): 0 units - no cause found in the data
+  30-08-2025 (Sat): 0 units - no cause found in the data
+  31-08-2025 (Sun): 0 units - no cause found in the data
+  01-09-2025 (Mon): 0 units - no cause found in the data
+  23-09-2025 (Tue): 0 units - no cause found in the data
+  24-09-2025 (Wed): 44 units - no cause found in the data
+  26-09-2025 (Fri): 31 units - no cause found in the data
+  27-09-2025 (Sat): 34 units - no cause found in the data
+  28-09-2025 (Sun): 0 units - no cause found in the data
+  29-09-2025 (Mon): 0 units - no cause found in the data
+  05-10-2025 (Sun): 40 units - no cause found in the data
+  06-10-2025 (Mon): 32 units - no cause found in the data
+  07-10-2025 (Tue): 24 units - no cause found in the data
+  15-10-2025 (Wed): 0 units - no cause found in the data
+  17-10-2025 (Fri): 0 units - no cause found in the data
+  19-10-2025 (Sun): 48 units - no cause found in the data
+  27-10-2025 (Mon): 49 units - no cause found in the data
+  17-11-2025 (Mon): 0 units - no cause found in the data
+  21-11-2025 (Fri): 0 units - no cause found in the data
+  23-11-2025 (Sun): 39 units - no cause found in the data
+  30-12-2025 (Tue): 0 units - no cause found in the data
+  14-01-2026 (Wed): 0 units - no cause found in the data
+  15-01-2026 (Thu): 0 units - no cause found in the data
+  16-01-2026 (Fri): 0 units - no cause found in the data
+  17-01-2026 (Sat): 41 units - no cause found in the data
+
+LATE-POSTING FIXES (walk-in units spread evenly; bulk stays on the upload day)
+  06-07-2025 -> 05-07-2025 to 06-07-2025: 629 units
+  24-07-2025, 25-07-2025 -> 21-07-2025 to 25-07-2025: 5,899 units
+
+STOCK-OUTS
+  Method: a run of >= 3 zero days is marked when, given how often the product
+  normally sells, a gap that long has < 1% chance of happening by luck.
+  Days before first sale / after last sale count as 'not on the cart'.
+  Marked: 320,377 product-days across 807 products
+
+20 LARGEST BULK ROWS
+     500  24-07-2025  SB Paper Cups Plain 100 ML 0.59 Paisa  [supply/catering order]
+     263  18-07-2025  Gorus Mineral Water Mrp20  [>= 8x usual day (6)]
+     250  27-06-2024  SB Paper Cups Plain 100 ML 0.59 Paisa  [supply/catering order]
+     231  18-07-2025  BAILLEY PACKAGED DRINKING WATER 10 MRP  [>= 8x usual day (10)]
+     230  18-07-2025  Limca Lemon 250ml Mrp20/-  [>= 8x usual day (4)]
+     207  18-07-2025  Gorus Mineral Water Mrp10  [>= 8x usual day (9)]
+     178  18-07-2025  Sting Energy 250ml  [>= 8x usual day (4)]
+     175  18-07-2025  7UP Nimbooz Lemon Mrp20  [>= 8x usual day (6)]
+     159  24-07-2025  Aakash Indori Masala Chips Mrp10/-  [>= 8x usual day (2)]
+     117  18-07-2025  Aakash classic Salt chips Rs10/-  [>= 8x usual day (3)]
+     109  18-07-2025  Bailley packaged drinking water 20 MRP  [>= 8x usual day (10)]
+     104  18-07-2025  Aakash Tomato Chips Mrp10/-  [>= 8x usual day (3)]
+     100  12-07-2024  SB Paper Cups Plain 100 ML 0.59 Paisa  [supply/catering order]
+     100  23-07-2024  Paper Cups Plain 150 ML 0.71 Paisa  [supply/catering order]
+      97  18-07-2025  Smoodh Toffee Caramel Mrp20  [>= 8x usual day (2)]
+      93  18-07-2025  Britannia Jim Jam Mrp10  [>= 8x usual day (6)]
+      90  24-07-2025  Cadbury Gems Mrp5/-  [>= 8x usual day (2)]
+      90  18-07-2025  Amul Lassi Rose Mrp20  [>= 8x usual day (5)]
+      86  24-07-2025  Akash Salted Peanuts Rs10/-  [>= 8x usual day (2)]
+      82  18-07-2025  Xotik Jeeru Jeera Masala Mrp10  [>= 8x usual day (3)]
+
+CATALOG / MAPPING / HOLIDAYS
+  catalog: 1057 products, 302 active, 700 launch dates, 755 delisted
+  replaced: 3152 Britannia Winkin Cow Classic Lassi Mrp30  ->  1659 Britannia Winkin Cow Classic Lassi Mrp20 from 30-08-2024
+  replaced: 1347 Coca Cola 750ml  ->  3571 Coca Cola 600ml. from 22-04-2025
+  replaced: 1277 Sprite 750 ml  ->  3568 Sprite 600 Ml from 22-04-2025
+  event days added to holidays: 18-07-2025
+
+CHECK / UNSURE
+  - 9 MRPs filled from typical retail prices (no price in the name)
+  - 186 products could not be categorised ('Other')
+  - transactions column omitted: the export has no bill counts
+  - moon-based holiday dates can shift by a day; add local festivals for the cart's city
+  - 8 offline/low days before 02-07-2025 - too long to be a late posting; re-export that period
+  - EXPORT LOOKS INCOMPLETE: no rows at all 26-04-2025 to 22-05-2025 (27 days) - these days will read as 0 sales
+  - EXPORT LOOKS INCOMPLETE: no rows at all 24-08-2025 to 01-09-2025 (9 days) - these days will read as 0 sales

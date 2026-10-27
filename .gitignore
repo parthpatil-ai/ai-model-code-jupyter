@@ -1,0 +1,30 @@
+# Ignore everything in the home folder by default; only project code is tracked.
+/*
+!/.gitignore
+!/sagemaker-inference/
+!/training-code/
+!/endpoint-build/
+!/prediction-test/
+!/sagemaker_train.py
+!/requirements.txt
+
+# Secrets
+.env
+.env*
+*.pem
+credentials
+
+# Data, models, build output
+*.csv
+*.pkl
+*.tar.gz
+*.joblib
+*.bak
+*.backup
+logs/
+model-check/
+
+# Python / Jupyter clutter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/

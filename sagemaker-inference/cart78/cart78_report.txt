@@ -1,0 +1,39 @@
+======================================================================
+CART DATASET REPORT
+======================================================================
+Date range      : 15-08-2026 to 12-10-2026 (59 days)
+Rows / products : 15,185 rows, 482 products
+Units           : 24,444 total, 142 bulk (1 bulk rows)
+Variants renamed: 0 (current name used, same id kept)
+
+DAYS WITH 0 SALES OR UNDER 30% OF A NORMAL DAY (normal = 399 units)
+  25-08-2026 (Tue): 0 units - no cause found in the data
+  28-08-2026 (Fri): 0 units - no cause found in the data
+  30-08-2026 (Sun): 0 units - no cause found in the data
+  22-09-2026 (Tue): 0 units - no cause found in the data
+  23-09-2026 (Wed): 85 units - no cause found in the data
+
+LATE-POSTING FIXES (walk-in units spread evenly; bulk stays on the upload day)
+  none detected
+
+STOCK-OUTS
+  Method: a run of >= 3 zero days is marked when, given how often the product
+  normally sells, a gap that long has < 1% chance of happening by luck.
+  Days before first sale / after last sale count as 'not on the cart'.
+  Marked: 9,026 product-days across 342 products
+
+20 LARGEST BULK ROWS
+     142  02-10-2026  Crypto Water Mrp10  [>= 8x usual day (14)]
+
+CATALOG / MAPPING / HOLIDAYS
+  catalog: 482 products, 437 active, 190 launch dates, 45 delisted
+  replaced: 828 Kurkure Masala Munch Mrp10  ->  823 Kurkure Masala Munch Mrp20 from 23-09-2026
+  replaced: 828 Kurkure Masala Munch Mrp10  ->  1745 Kurkure Masala Munch Mrp30 from 25-09-2026
+  replaced: 2407 Snickers Original Mrp50  ->  1504 Snickers Original Mrp18 from 01-09-2026
+  event days added to holidays: none
+
+CHECK / UNSURE
+  - 18 MRPs filled from typical retail prices (no price in the name)
+  - 3 products could not be categorised ('Other')
+  - transactions column omitted: the export has no bill counts
+  - moon-based holiday dates can shift by a day; add local festivals for the cart's city

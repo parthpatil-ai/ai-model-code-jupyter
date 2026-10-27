@@ -1,0 +1,29 @@
+TEST RESULTS - cart 78  (21-10-2026 12:59)
+======================================================================
+[PASS] sales.csv exists
+[PASS] catalog.csv exists
+[PASS] variant_mapping.csv exists
+[PASS] holidays.csv exists
+[PASS] sales.csv columns ['variantId', 'productName', 'date', 'quantitySold', 'isBulk', 'isStockout', 'category', 'mrp']
+[PASS] Mongo daily table matches sales_transactions: 6,158 product-days, 24,444 units, 0 mismatches
+[WARN] only COMPLETED bills counted (509 units from other statuses; see EXCLUDE_BILLS)
+       CANCELLED: 327 units
+       CREATED: 124 units
+       INVENTORY_UPDATE_PENDING: 38 units
+       PAYMENT_PENDING: 20 units
+[PASS] total units kept: raw 24,444 -> expected 24,444 -> sales 24,444
+[PASS] no duplicate (variantId, date, isBulk) rows (0 found)
+[PASS] no negative quantities
+[PASS] no stock-out day with sales (0 found)
+[PASS] catalog covers every product in sales (482 vs 482)
+[WARN] stock-outs inside product life only: 9,026 stock-out rows, 6,162 (68%) before first / after last sale
+[PASS] holidays cover every data year (data [2026], holidays [2026])
+[WARN] every product has an MRP (1 missing, 56 sales rows)
+[WARN] every product categorised (3 of 482 are 'Other')
+
+SUMMARY
+  date range   : 15-08-2026 to 12-10-2026
+  products     : 482 (437 active)
+  sales rows   : 6,159 with sales, 9,026 stock-out rows
+  units        : 24,444 (142 bulk)
+  result       : PASS (see WARN lines)
