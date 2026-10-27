@@ -2,14 +2,9 @@
 
 The multi-model endpoint serves every cart from one S3 folder
 (s3://<bucket>/models/live/). Each promoted model is one archive there,
-cart_<id>/<training job name>.tar.gz, holding the trained model plus the
-inference code needed to load it:
-
-    model.pkl
-    cleaning_log.csv
-    code/inference.py
-    code/app/...            (ForecastModel's package, needed to unpickle it)
-    code/requirements.txt
+cart_<id>/<training job name>.tar.gz - a copy of the training job's
+model.tar.gz (model.pkl + cleaning_log.csv). The inference code is not in it:
+the endpoint loads that once at startup (see deploy_multimodel_endpoint.py).
 
 Archives are never overwritten: the endpoint caches models it has loaded, so a
 replaced file could keep serving the old model. Instead, a pointer file
@@ -24,10 +19,7 @@ Usage:
 
 import argparse
 import json
-import tarfile
-import tempfile
 from datetime import datetime, timezone
-from pathlib import Path
 
 import boto3
 
@@ -35,7 +27,6 @@ BUCKET = "yatrikart-ml-prod-ai-stn"
 REGION = "ap-south-1"
 LIVE_PREFIX = "models/live"
 POINTER_PREFIX = "models/live-pointers"
-INFERENCE_CODE_DIR = Path.home() / "endpoint-build" / "code"
 
 
 def latest_completed_job(sm, cart_id):
@@ -82,25 +73,12 @@ def promote(cart_id, job_name=None):
     artifact = detail["ModelArtifacts"]["S3ModelArtifacts"]
     src_bucket, src_key = artifact.removeprefix("s3://").split("/", 1)
 
-    with tempfile.TemporaryDirectory() as tmp:
-        tmp = Path(tmp)
-        trained = tmp / "trained.tar.gz"
-        s3.download_file(src_bucket, src_key, str(trained))
-
-        packaged = tmp / "packaged.tar.gz"
-        with tarfile.open(packaged, "w:gz") as out:
-            with tarfile.open(trained, "r:gz") as src:
-                for member in src.getmembers():
-                    if member.isfile():
-                        out.addfile(member, src.extractfile(member))
-            out.add(
-                INFERENCE_CODE_DIR,
-                arcname="code",
-                filter=lambda t: None if "__pycache__" in t.name or ".ipynb_checkpoints" in t.name else t,
-            )
-
-        target_model = f"cart_{cart_id}/{job_name}.tar.gz"
-        s3.upload_file(str(packaged), BUCKET, f"{LIVE_PREFIX}/{target_model}")
+    target_model = f"cart_{cart_id}/{job_name}.tar.gz"
+    s3.copy(
+        {"Bucket": src_bucket, "Key": src_key},
+        BUCKET,
+        f"{LIVE_PREFIX}/{target_model}",
+    )
 
     result = {
         "cart_id": cart_id,

@@ -20,7 +20,7 @@ EXTRACTOR = BASE_DIR / "cart_data_pipeline.py"
 SUBMITTER = Path.home() / "training-code" / "submit_cart_training.py"
 
 # One multi-model endpoint serves every cart (endpoint-build/deploy_multimodel_endpoint.py).
-PREDICT_ENDPOINT = os.environ.get("PREDICT_ENDPOINT", "yk-forecast-mme")
+PREDICT_ENDPOINT = os.environ.get("PREDICT_ENDPOINT", "yk-cart-forecast")
 
 sys.path.append(str(SUBMITTER.parent))
 from promote_model import current_target_model, promote  # noqa: E402
